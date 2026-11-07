@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar aprendiz</title>
+</head>
+
+<body>
+
+    <h1>Buscar aprendiz</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Documento del aprendiz:</label>
+
+        <input type="text" name="documento" placeholder="Ingrese el documento" required>
+
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if messages %}
+    {% for mensaje in messages %}
+    <p style="color:red">{{ mensaje }}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if aprendiz %}
+    <h2>Aprendiz encontrado</h2>
+
+    <p>Nombre: {{ aprendiz.nombre }}</p>
+    <p>Apellido: {{ aprendiz.apellido }}</p>
+    <p>Documento: {{ aprendiz.documento }}</p>
+    <p>Correo: {{ aprendiz.correo }}</p>
+    <p>Teléfono: {{ aprendiz.telefono }}</p>
+
+    <td>
+        <a href="{% url 'editar_aprendiz' aprendiz.documento %}" class="btn btn-sm">
+            Editar
+        </a>
+
+    </td>
+    <td>
+        <form action="{% url 'eliminar' aprendiz.documento %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm">
+                Eliminar
+            </button>
+        </form>
+    </td>           
+    {% endif %}
+
+
+</body>
+
+</html>

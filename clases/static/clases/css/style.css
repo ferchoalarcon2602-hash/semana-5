@@ -1,0 +1,500 @@
+
+/* ========================================
+   ESTILOS GENERALES
+======================================== */
+
+:root {
+    --azul-principal: #174a7e;
+    --azul-oscuro: #10345a;
+    --azul-claro: #eaf3fb;
+    --verde: #239b75;
+    --verde-claro: #e3f6ed;
+    --amarillo: #f4c95d;
+    --fondo: #f4f7fb;
+    --blanco: #ffffff;
+    --texto: #263548;
+    --texto-suave: #718096;
+    --borde: #dce5ef;
+    --rojo: #d94b4b;
+    --sombra: 0 8px 24px rgba(23, 74, 126, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.pagina {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ========================================
+   ENCABEZADO PRINCIPAL
+======================================== */
+
+.encabezado {
+    background: linear-gradient(
+        135deg,
+        var(--azul-oscuro),
+        var(--azul-principal)
+    );
+    color: var(--blanco);
+    padding: 45px 7%;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--verde);
+}
+
+.encabezado::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    right: 5%;
+    top: -100px;
+}
+
+.titulo-principal {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 750;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.descripcion-principal {
+    color: #d9e8f7;
+    font-size: 16px;
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   BOTONES Y ACCIONES
+======================================== */
+
+.acciones-principales {
+    margin-top: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.boton-crear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--verde);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 650;
+    padding: 12px 22px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.boton-crear:hover {
+    background: #197a5c;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.16);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--azul-claro);
+    color: var(--azul-principal);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 13px;
+    border: 1px solid #c8dced;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--azul-principal);
+    color: var(--blanco);
+    border-color: var(--azul-principal);
+}
+
+.btn-sm {
+    white-space: nowrap;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.contenido {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 35px 5%;
+}
+
+.seccion {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--sombra);
+}
+
+.titulo-seccion {
+    color: var(--azul-oscuro);
+    font-size: 25px;
+    font-weight: 750;
+    margin-bottom: 24px;
+    padding-left: 15px;
+    border-left: 5px solid var(--verde);
+}
+
+/* ========================================
+   TABLA DE APRENDICES
+======================================== */
+
+.contenedor-tabla {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background: var(--blanco);
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+.tabla th {
+    background: var(--azul-principal);
+    color: var(--blanco);
+    padding: 16px 14px;
+    font-weight: 650;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--verde);
+}
+
+.tabla th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.tabla th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.tabla td {
+    padding: 15px 14px;
+    border-bottom: 1px solid #e8edf4;
+    vertical-align: middle;
+}
+
+.tabla tbody tr {
+    transition: background 0.2s ease;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background: #f7faff;
+}
+
+.tabla tbody tr:hover {
+    background: #eaf4fc;
+}
+
+.tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========================================
+   ESTADOS DEL APRENDIZ
+======================================== */
+
+.estado {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 750;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.estado.activo {
+    color: #18794e;
+    background: var(--verde-claro);
+    border: 1px solid #bce8d1;
+}
+
+.estado.inactivo {
+    color: #a93232;
+    background: #fdeaea;
+    border: 1px solid #f5caca;
+}
+
+/* ========================================
+   ETIQUETAS DE COMPETENCIAS
+======================================== */
+
+.etiqueta-competencia {
+    display: inline-block;
+    background: #e8f1ff;
+    color: #245b96;
+    border: 1px solid #d1e2fa;
+    padding: 5px 9px;
+    margin: 2px 3px 4px 0;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* ========================================
+   MENSAJES Y CELDAS VACÍAS
+======================================== */
+
+.texto-vacio {
+    color: var(--texto-suave);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.fila-vacia {
+    background: #f8fafc !important;
+}
+
+.celda-vacia {
+    text-align: center;
+    color: var(--texto-suave);
+    padding: 35px 20px !important;
+    font-size: 15px;
+}
+
+/* ========================================
+   ACCESIBILIDAD Y EFECTOS
+======================================== */
+
+a:focus-visible {
+    outline: 3px solid var(--amarillo);
+    outline-offset: 3px;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+    .encabezado {
+        padding: 32px 6%;
+    }
+
+    .titulo-principal {
+        font-size: 28px;
+    }
+
+    .descripcion-principal {
+        font-size: 14px;
+    }
+
+    .contenido {
+        padding: 22px 4%;
+    }
+
+    .seccion {
+        padding: 18px 14px;
+        border-radius: 12px;
+    }
+
+    .titulo-seccion {
+        font-size: 21px;
+        margin-bottom: 18px;
+    }
+
+    .tabla {
+        font-size: 13px;
+    }
+
+    .tabla th,
+    .tabla td {
+        padding: 12px 10px;
+    }
+
+    .boton-crear {
+        width: 100%;
+        padding: 13px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .encabezado {
+        padding: 28px 5%;
+    }
+
+    .titulo-principal {
+        font-size: 25px;
+    }
+
+    .contenido {
+        padding: 18px 3%;
+    }
+
+    .seccion {
+        padding: 15px 10px;
+    }
+
+    .titulo-seccion {
+        font-size: 19px;
+    }
+
+    .tabla th,
+    .tabla td {
+        padding: 10px 9px;
+    }
+}
+
+
+
+
+
+/* ========================================
+   FORMULARIO DE APRENDICES
+======================================== */
+
+.formulario-aprendiz {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 35px;
+    background: #ffffff;
+    border: 1px solid #dce5ef;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(23, 74, 126, 0.08);
+}
+
+/* Título del formulario */
+
+.formulario-aprendiz h1,
+.formulario-aprendiz h2 {
+    color: #174a7e;
+    margin-bottom: 10px;
+    font-weight: 750;
+}
+
+.formulario-aprendiz p {
+    color: #718096;
+    margin-bottom: 18px;
+}
+
+/* Etiquetas */
+
+.formulario-aprendiz label {
+    display: block;
+    margin-bottom: 7px;
+    color: #263548;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+/* Campos de texto, listas y fechas */
+
+.formulario-aprendiz input:not([type="checkbox"]):not([type="radio"]),
+.formulario-aprendiz select,
+.formulario-aprendiz textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #d1dce8;
+    border-radius: 9px;
+    background: #f9fbfe;
+    color: #263548;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+/* Efecto al seleccionar un campo */
+
+.formulario-aprendiz input:focus,
+.formulario-aprendiz select:focus,
+.formulario-aprendiz textarea:focus {
+    border-color: #239b75;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(35, 155, 117, 0.13);
+}
+
+/* Casillas de selección */
+
+.formulario-aprendiz input[type="checkbox"],
+.formulario-aprendiz input[type="radio"] {
+    accent-color: #239b75;
+}
+
+/* Botón guardar */
+
+.formulario-aprendiz button[type="submit"],
+.formulario-aprendiz input[type="submit"] {
+    display: inline-block;
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #239b75;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.formulario-aprendiz button[type="submit"]:hover,
+.formulario-aprendiz input[type="submit"]:hover {
+    background: #197a5c;
+    transform: translateY(-1px);
+}
+
+/* Errores de validación de Django */
+
+.formulario-aprendiz .errorlist {
+    margin: 0 0 10px;
+    padding-left: 20px;
+    color: #c0392b;
+    font-size: 13px;
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 600px) {
+    .formulario-aprendiz {
+        margin: 20px 12px;
+        padding: 22px 18px;
+    }
+
+    .formulario-aprendiz h1 {
+        font-size: 25px;
+    }
+}

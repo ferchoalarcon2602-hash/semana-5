@@ -1,0 +1,12 @@
+{% load static %}
+{% include 'clases/index.html' %}
+
+{% block content %}
+<form method="POST"  class="formulario-aprendiz">
+        {% csrf_token %}
+
+    {{ forms.as_p }}
+
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}
